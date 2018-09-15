@@ -43,9 +43,9 @@ setup_spark() {
         echo "export SPARK_HOME=${SPARK_PATH}/${SPARK_VERSION}" >> ~/.bashrc
         echo '# Exports for spark console' >> $HOME/.bashrc
         echo "export SPARK_HOME=${SPARK_PATH}/${SPARK_VERSION}" >> ~/.bashrc
-        echo "export PYTHONPATH=${SPARK_HOME}/python:${SPARK_HOME}/python/build:$PYTHONPATH" >> ~/.bashrc
+        echo "export PYTHONPATH=${SPARK_PATH}/${SPARK_VERSION}/python:${SPARK_PATH}/${SPARK_VERSION}/python/build:$PYTHONPATH" >> ~/.bashrc
         echo "export PYSPARK_PYTHON=python3" >> ~/.bashrc
-        echo "export PATH=$SPARK_HOME/bin:$PATH" >> ~/.bashrc
+        echo "export PATH=${SPARK_PATH}/${SPARK_VERSION}/bin:~/.local/bin:$PATH" >> ~/.bashrc
     else
         printf "${YELLOW}Export Spark variables are already updated${NC}\n"
     fi
