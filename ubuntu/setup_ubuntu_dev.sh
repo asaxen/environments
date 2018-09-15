@@ -26,7 +26,7 @@ setup_python() {
     sudo apt install python -y
     sudo apt install python-pip -y
     sudo apt install python3-pip -y
-    pip install pipenv --user
+    pip3 install pipenv --user
 }
 
 setup_spark() {
