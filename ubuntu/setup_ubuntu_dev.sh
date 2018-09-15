@@ -26,7 +26,7 @@ setup_python() {
     sudo apt install python -y
     sudo apt install python-pip -y
     sudo apt install python3-pip -y
-    sudo apt install pipenv -y 
+    pip install pipenv --user
 }
 
 setup_spark() {
@@ -42,7 +42,6 @@ setup_spark() {
         echo '# Exports for spark' >> $HOME/.bashrc
         echo "export SPARK_HOME=${SPARK_PATH}/${SPARK_VERSION}" >> ~/.bashrc
         echo '# Exports for spark console' >> $HOME/.bashrc
-        echo "export SPARK_HOME=${SPARK_PATH}/${SPARK_VERSION}" >> ~/.bashrc
         echo "export PYTHONPATH=${SPARK_PATH}/${SPARK_VERSION}/python:${SPARK_PATH}/${SPARK_VERSION}/python/build:$PYTHONPATH" >> ~/.bashrc
         echo "export PYSPARK_PYTHON=python3" >> ~/.bashrc
         echo "export PATH=${SPARK_PATH}/${SPARK_VERSION}/bin:~/.local/bin:$PATH" >> ~/.bashrc
